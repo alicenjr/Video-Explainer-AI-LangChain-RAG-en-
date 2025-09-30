@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Transcripter & QnA</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 12px; width: 420px; color: #111; }
+    h1 { font-size: 16px; margin: 0 0 12px; }
+    .section { margin-bottom: 12px; }
+    label { display: block; font-size: 12px; margin: 6px 0 4px; }
+    input[type="password"], input[type="text"], textarea { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+    textarea { min-height: 90px; resize: vertical; }
+    .row { display: flex; gap: 8px; }
+    .row > * { flex: 1; }
+    button { background: #cc0000; color: #fff; border: none; padding: 8px 10px; border-radius: 6px; cursor: pointer; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .secondary { background: #444; }
+    .status { font-size: 12px; color: #555; margin-top: 6px; }
+    .message { font-size: 13px; margin: 8px 0; }
+    .error { color: #b00020; }
+    .success { color: #0a7b36; }
+    #result { white-space: pre-wrap; background: #fafafa; padding: 8px; border-radius: 6px; border: 1px solid #eee; min-height: 40px; }
+  </style>
+</head>
+<body>
+  <h1>YouTube Transcripter & QnA</h1>
+
+  <div id="notYoutube" class="message error" style="display:none">Please open a YouTube video to use this extension.</div>
+
+  <div class="section" id="keysSection">
+    <label for="cohereKey">Cohere API Key</label>
+    <input id="cohereKey" type="password" placeholder="cohere_api_key..." autocomplete="off" />
+
+    <label for="openrouterKey">OpenRouter API Key</label>
+    <input id="openrouterKey" type="password" placeholder="sk-or-..." autocomplete="off" />
+
+    <div class="row" style="margin-top:8px;">
+      <button id="saveKeysBtn" class="secondary">Save/Update Keys</button>
+      <button id="checkStatusBtn" class="secondary">Check Status</button>
+    </div>
+    <div id="keysStatus" class="status"></div>
+  </div>
+
+  <div class="section" id="qaSection" style="display:none">
+    <label for="question">Your question about this video</label>
+    <textarea id="question" placeholder="e.g., Summarize the key points"></textarea>
+
+    <button id="askBtn">Ask Question</button>
+    <div id="askStatus" class="status"></div>
+
+    <div id="result" class="section"></div>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

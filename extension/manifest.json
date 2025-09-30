@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Transcripter & QnA",
+    "version": "1.0.0",
+    "description": "Ask questions about YouTube videos using AI.",
+    "permissions": ["activeTab", "tabs", "storage", "scripting"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.youtube.com/*",
+          "https://m.youtube.com/*",
+          "https://youtu.be/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "host_permissions": [
+      "https://*.youtube.com/*",
+      "https://youtu.be/*",
+      "http://localhost:8000/*",
+      "http://127.0.0.1:8000/*"
+    ]
+  }
+  
