@@ -1,5 +1,11 @@
 # 🎥 Video Explainer AI
 
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)
+![LangChain](https://img.shields.io/badge/LangChain-latest-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Stars](https://img.shields.io/github/stars/alicenjr/Video-Explainer-AI-LangChain-RAG-en-?style=social)
+
 Ask questions about YouTube videos and get instant answers using AI.
 
 ## What It Does
