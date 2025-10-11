@@ -1,0 +1,24 @@
+# Ensure all code languages are detected and shown in repository stats
+# This helps showcase the full tech stack to potential interviewers
+
+# Mark all files as not vendored (include in language stats)
+* linguist-vendored=false
+
+# Mark all files as not generated (include in language stats)
+* linguist-generated=false
+
+# Exclude documentation from language stats
+*.md linguist-documentation
+*.txt linguist-documentation
+
+# Ensure common web technologies are properly detected
+*.html linguist-detectable
+*.css linguist-detectable
+*.js linguist-detectable
+*.json linguist-detectable
+
+# Ensure Python files are detected
+*.py linguist-detectable
+
+# Ensure Jupyter notebooks are counted
+*.ipynb linguist-detectable
